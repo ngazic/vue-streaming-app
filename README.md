@@ -19,6 +19,10 @@ npm run build
 ```
 npm run test:unit
 ```
+### Run unit tests with hot reload
+```
+npm run test:watch
+```
 
 ### Run your end-to-end tests
 ```
