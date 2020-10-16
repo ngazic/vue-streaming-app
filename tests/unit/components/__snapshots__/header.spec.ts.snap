@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header.vue show/hide links on authentification renders correctly 1`] = `
+<header id="header">
+  <div class="logo">
+    <router-link-stub to="/" tag="a" ariacurrentvalue="page" event="click">Vue - Streaming App</router-link-stub>
+  </div>
+  <nav>
+    <ul>
+      <!---->
+      <!---->
+      <li><button class="logout">Logout</button></li>
+    </ul>
+  </nav>
+</header>
+`;

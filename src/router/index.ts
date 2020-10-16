@@ -6,6 +6,8 @@ import store from '../store'
 Vue.use(VueRouter)
 
 export const routes: Array<RouteConfig> = [
+  { path: '/signup', },
+  { path: '/signin', },
   {
     path: '/',
     name: 'Home',
