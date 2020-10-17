@@ -1,0 +1,91 @@
+{
+    "window.zoomLevel": 0,
+    "[php]": {
+        "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+        "editor.tabSize": 2,
+        "editor.matchBrackets": "always",
+        "editor.autoClosingBrackets": "always",
+    },
+    "markdown.extension.toc.levels": "2..6",
+    "[scss]": {
+
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "git.confirmSync": false,
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify",
+        "editor.tabSize": 2
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "HookyQR.beautify",
+        "editor.tabSize": 2
+    },
+    "workbench.colorTheme": "Default Light+",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.tabSize": 2
+    },
+    "files.associations": {
+        "*.scss": "scss",
+        "*.js": "javascriptreact"
+    },
+    "explorer.confirmDelete": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[csv]": {
+    },
+    "csv-preview.lineNumbers": "ordinal",
+    "csv-preview.openStdin": true,
+    "csv-preview.resizeColumns": "all",
+    "phpfmt.enable_auto_align": true,
+    "phpfmt.cakephp": true,
+    "phpformatter.composer": true,
+    "phpfmt.smart_linebreak_after_curly": true,
+    "phpfmt.psr2": false,
+    "phpfmt.detect_indent": true,
+    "phpfmt.indent_with_space": 2,
+    "[vue]": {
+        "editor.defaultFormatter": "Glavin001.unibeautify-vscode",
+        "editor.tabSize": 2
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "python.jediEnabled": false,
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    "[javascriptreact]": {
+
+
+    "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[blade]": {
+        "editor.defaultFormatter": "HookyQR.beautify",
+        "editor.tabSize": 2
+    },
+    "phpfmt.exclude": [
+        "AllmanStyleBraces"
+    ],
+    "stylelint.config": {
+        "extends": "stylelint-config-standard",
+        "rules": {
+            "at-rule-name-case": "lower",
+            "at-rule-name-space-after": "always-single-line",
+            "at-rule-semicolon-newline-after": "always",
+        },
+    },
+    "stylelint.enable": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    
+    
+}
