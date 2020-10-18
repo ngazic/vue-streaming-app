@@ -48,7 +48,7 @@ describe('SignUp.vue', () => {
   });
 
   describe('Testing on correct user input', () => {
-    let MockFormData: SignUpData = {
+    const MockFormData: SignUpData = {
       user: 'John Doe',
       password: 'secret1234',
       confirmPassword: 'secret1234'
@@ -57,7 +57,7 @@ describe('SignUp.vue', () => {
       const actions = {
         signup: jest.fn()
       }
-      const wrapper = createConfig({ actions }, MockFormData);
+      wrapper = createConfig({ actions }, MockFormData);
       await form.trigger('submit.prevent')
       expect(actions.signup).toHaveBeenCalled()
     });
@@ -72,7 +72,7 @@ describe('SignUp.vue', () => {
         }
       }
 
-      const wrapper = createConfig(config, MockFormData)
+      wrapper = createConfig(config, MockFormData)
       const spy = jest.spyOn(wrapper.vm.$router, 'push')
       await form.trigger('submit.prevent')
       expect(spy).toBeCalled()
@@ -83,7 +83,7 @@ describe('SignUp.vue', () => {
       const actions = {
         signup: jest.fn().mockRejectedValue({ err: 'error message' })
       }
-      const wrapper = createConfig({ actions }, MockFormData)
+      wrapper = createConfig({ actions }, MockFormData)
       const spy = jest.spyOn(window, 'alert')
       await form.trigger('submit.prevent')
       expect(spy).toHaveBeenCalledWith({ err: 'error message' })
@@ -91,7 +91,7 @@ describe('SignUp.vue', () => {
   });
 
   describe('Testing on incorrect user input', () => {
-    let MockFormData: SignUpData = {
+    const MockFormData: SignUpData = {
       user: 'John Doe',
       password: 'secret1234',
       confirmPassword: 'wrongsecret1234'
@@ -100,7 +100,7 @@ describe('SignUp.vue', () => {
       const actions = {
         signup: jest.fn()
       }
-      const wrapper = createConfig({ actions }, MockFormData);
+      wrapper = createConfig({ actions }, MockFormData);
       await form.trigger('submit.prevent')
       expect(actions.signup).not.toHaveBeenCalled()
     });
@@ -108,7 +108,7 @@ describe('SignUp.vue', () => {
       const actions = {
         signup: jest.fn()
       }
-      const wrapper = createConfig({ actions }, MockFormData);
+      wrapper = createConfig({ actions }, MockFormData);
       const spy = jest.spyOn(window, 'alert')
       await form.trigger('submit.prevent')
       expect(spy).toHaveBeenCalled()
