@@ -37,12 +37,12 @@ describe('SignIn.vue', () => {
     return wrapper
   }
 
-  it('renders correclty', () => {
+  it('renders correctly', () => {
     wrapper = shallowMount(SignIn)
     expect(wrapper).toMatchSnapshot()
   });
 
-  it('dispatches "login" action when submit button is clicked', async () => {
+  it('dispatches "login" action when form is submited', async () => {
     const actions = {
       login: jest.fn()
     }

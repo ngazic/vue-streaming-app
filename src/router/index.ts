@@ -2,12 +2,14 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import store from '../store'
+import SignIn from '@/components/Auth/SignIn.vue'
+import SignUp from '@/components/Auth/SignUp.vue'
 
 Vue.use(VueRouter)
 
 export const routes: Array<RouteConfig> = [
-  { path: '/signup', },
-  { path: '/signin', },
+  { path: '/signup', component: SignUp },
+  { path: '/signin', component: SignIn },
   {
     path: '/',
     name: 'Home',

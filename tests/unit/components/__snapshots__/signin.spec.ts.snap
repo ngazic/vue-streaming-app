@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn.vue renders correctly 1`] = `
+<div id="signin">
+  <div class="signin-form">
+    <form>
+      <div class="input"><label for="user">User</label> <input type="user" id="user"></div>
+      <div class="input"><label for="password">Password</label> <input type="password" id="password"></div>
+      <div class="submit"><button type="submit">Submit</button></div>
+    </form>
+  </div>
+</div>
+`;

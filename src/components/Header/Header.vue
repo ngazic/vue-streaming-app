@@ -1,22 +1,22 @@
 <template>
-  <header id="header">
-    <div class="logo">
-      <router-link to="/">Vue - Streaming App</router-link>
-    </div>
-    <nav>
-      <ul>
-        <li v-if="!auth">
-          <router-link to="/signup" class="login">Sign Up</router-link>
-        </li>
-        <li v-if="!auth">
-          <router-link to="/signin" class="login">Sign In</router-link>
-        </li>
-        <li v-if="auth">
-          <button @click="onLogout" class="logout">Logout</button>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<header id="header">
+  <div class="logo">
+    <router-link to="/">Vue - Streaming App</router-link>
+  </div>
+  <nav>
+    <ul>
+      <li v-if="!auth">
+        <router-link to="/signup" class="login">Sign Up</router-link>
+      </li>
+      <li v-if="!auth">
+        <router-link to="/signin" class="login">Sign In</router-link>
+      </li>
+      <li v-if="auth">
+        <button @click="onLogout" class="logout">Logout</button>
+      </li>
+    </ul>
+  </nav>
+</header>
 </template>
 
 <script>
@@ -53,6 +53,16 @@ export default {
 .logo a {
   text-decoration: none;
   color: white;
+}
+
+@media only screen and (max-width: 400px) {
+  .logo a {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 80px;
+    overflow: hidden;
+  }
 }
 
 nav {
