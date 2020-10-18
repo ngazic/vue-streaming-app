@@ -104,14 +104,23 @@ describe('SignUp.vue', () => {
       await form.trigger('submit.prevent')
       expect(actions.signup).not.toHaveBeenCalled()
     });
-    it('shows alert message on incorrect form data', async () => {
+    it('shows alert message on incorrect confirm password', async () => {
       const actions = {
         signup: jest.fn()
       }
       wrapper = createConfig({ actions }, MockFormData);
       const spy = jest.spyOn(window, 'alert')
       await form.trigger('submit.prevent')
-      expect(spy).toHaveBeenCalled()
+      expect(spy).toHaveBeenLastCalledWith("Please confirm correct password!!!")
     });
+    it('shows alert message on password shorter than 6 chars', async () => {
+      const actions = {
+        signup: jest.fn()
+      }
+      wrapper = createConfig({ actions }, Object.assign({...MockFormData, password: 'shrt'}));
+      const spy = jest.spyOn(window, 'alert')
+      await form.trigger('submit.prevent')
+      expect(spy).toHaveBeenLastCalledWith("Enter 6 characters minimum!!!")
   })
+});
 });
