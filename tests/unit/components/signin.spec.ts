@@ -1,6 +1,5 @@
-import { shallowMount, createLocalVue, Wrapper, createWrapper } from '@vue/test-utils'
-import Vuex, { ActionTree, Store, StoreOptions } from 'vuex'
-import flushPromises from 'flush-promises'
+import { shallowMount, createLocalVue, Wrapper } from '@vue/test-utils'
+import Vuex, { StoreOptions } from 'vuex'
 import VueRouter from 'vue-router'
 import SignIn from '@/components/Auth/SignIn.vue'
 
@@ -8,7 +7,7 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 localVue.use(VueRouter)
 const router = new VueRouter()
-jest.spyOn(window, 'alert').mockImplementation(() => { });
+jest.spyOn(window, 'alert').mockImplementation(() => { console.log('mocked alert') });
 
 describe('SignIn.vue', () => {
 
@@ -17,11 +16,12 @@ describe('SignIn.vue', () => {
     password: 'secret1234'
   }
 
+  let wrapper: Wrapper<SignIn>
   let user: Wrapper<SignIn>
   let password: Wrapper<SignIn>
   let form: Wrapper<SignIn>
 
-  function createConfig(overrides: StoreOptions<any>): Wrapper<SignIn> {
+  function createConfig(overrides: StoreOptions<unknown>): Wrapper<SignIn> {
     const store = new Vuex.Store(overrides)
 
     const wrapper = shallowMount(SignIn, {
@@ -38,7 +38,7 @@ describe('SignIn.vue', () => {
   }
 
   it('renders correclty', () => {
-    const wrapper = shallowMount(SignIn)
+    wrapper = shallowMount(SignIn)
     expect(wrapper).toMatchSnapshot()
   });
 
@@ -49,9 +49,8 @@ describe('SignIn.vue', () => {
 
 
 
-    const wrapper = createConfig({ actions });
+    wrapper = createConfig({ actions });
     await form.trigger('submit.prevent')
-    const spy = jest.spyOn(actions, 'login')
     expect(actions.login).toHaveBeenCalled()
 
   });
@@ -66,7 +65,7 @@ describe('SignIn.vue', () => {
       }
     }
 
-    const wrapper = createConfig(config);
+    wrapper = createConfig(config);
     const spy = jest.spyOn(wrapper.vm.$router, 'push')
     await form.trigger('submit.prevent')
     expect(spy).toBeCalled()
@@ -77,7 +76,7 @@ describe('SignIn.vue', () => {
     const actions = {
       login: jest.fn().mockRejectedValue({ err: 'error message' })
     }
-    const wrapper = createConfig({ actions })
+    wrapper = createConfig({ actions })
     const spy = jest.spyOn(window, 'alert')
     await form.trigger('submit.prevent')
     expect(spy).toHaveBeenCalledWith({ err: 'error message' })
