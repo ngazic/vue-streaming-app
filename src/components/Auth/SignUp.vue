@@ -9,7 +9,7 @@
 
       <div class="input">
         <label for="password">Password</label>
-        <input type="password" id="password" v-model="password" />
+        <input type="password" id="password" ref="passwrd" v-model="password" />
       </div>
       <div class="input">
         <label for="confirm-password">Confirm Password</label>
@@ -41,6 +41,7 @@ export default {
       if (this.password.length < 6) {
         this.$refs.passwrd.focus();
         alert("Enter 6 characters minimum!!!");
+        return;
       }
       if (this.$refs["confirm-password"].value !== this.password) {
         alert("Please confirm correct password!!!");
