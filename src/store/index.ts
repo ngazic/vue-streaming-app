@@ -55,16 +55,16 @@ export default new Vuex.Store({
         username: user.user
       })
     },
-    login(context, user: User): Promise<any> {
+    login( context, user: User): Promise<void> | null {
       if(user.user === "test" && user.password === 'test') {
         console.log(user.user)
         context.commit('auth', user.user)
         return Promise.resolve()
       }
-      // return axios.post("signin", {
-      //   password: user.password,
-      //   loginId: user.user
-      // })
+      return axios.post("signin", {
+        password: user.password,
+        loginId: user.user
+      }) as Promise< void>
     },
   },
   modules: {

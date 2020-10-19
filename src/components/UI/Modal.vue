@@ -22,7 +22,8 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue'
+export default Vue.extend({
   methods: {
     agreed(): void {
       this.$emit('handlePayment', true)
@@ -31,5 +32,5 @@ export default {
       this.$emit('handlePayment', false)
     }
   }
-};
+});
 </script>

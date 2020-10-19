@@ -29,10 +29,11 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import {
   mapActions
 } from "vuex";
-export default {
+export default Vue.extend({
   data() {
     return {
       user: "",
@@ -73,7 +74,7 @@ export default {
         .catch(err => (alert(err)));
     }
   }
-};
+});
 </script>
 
 <style scoped>

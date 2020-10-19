@@ -3,6 +3,8 @@ import Vuex, { StoreOptions } from 'vuex'
 import VueRouter from 'vue-router'
 import SignUp from '@/components/Auth/SignUp.vue'
 
+type Sign = Vue
+
 const localVue = createLocalVue()
 localVue.use(Vuex)
 localVue.use(VueRouter)
@@ -18,13 +20,13 @@ describe('SignUp.vue', () => {
 
 
 
-  let wrapper: Wrapper<SignUp>
-  let user: Wrapper<SignUp>
-  let password: Wrapper<SignUp>
-  let confirmPassword: Wrapper<SignUp>
-  let form: Wrapper<SignUp>
+  let wrapper: Wrapper<Sign>
+  let user: Wrapper<Sign>
+  let password: Wrapper<Sign>
+  let confirmPassword: Wrapper<Sign>
+  let form: Wrapper<Sign>
 
-  function createConfig(overrides: StoreOptions<unknown>, Form: SignUpData): Wrapper<SignUp> {
+  function createConfig(overrides: StoreOptions<unknown>, Form: SignUpData): Wrapper<Sign> {
     const store = new Vuex.Store(overrides)
 
     const wrapper = shallowMount(SignUp, {

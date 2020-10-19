@@ -19,10 +19,11 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import {
   mapActions
 } from "vuex";
-export default {
+export default Vue.extend({
   data() {
     return {
       user: "",
@@ -33,11 +34,11 @@ export default {
     ...mapActions(["login"]),
     onSubmit() {
 
-      this.login({
-          user: this.user,
-          password: this.password
-        })
-        .then((res: any) => {
+      const data: {user: string; password: string} = {user: this.user, password:this.password}
+      this.login(
+      data
+      )
+        .then(() => {
           if (this.$store.getters.isAuthenticated) {
             // eslint-disable-next-line no-console
             console.log("change route");
@@ -47,7 +48,7 @@ export default {
         .catch(err => alert(err));
     }
   }
-};
+});
 </script>
 
 <style scoped>

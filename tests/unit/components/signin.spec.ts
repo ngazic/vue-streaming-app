@@ -16,12 +16,12 @@ describe('SignIn.vue', () => {
     password: 'secret1234'
   }
 
-  let wrapper: Wrapper<SignIn>
-  let user: Wrapper<SignIn>
-  let password: Wrapper<SignIn>
-  let form: Wrapper<SignIn>
+  let wrapper: Wrapper<Vue>
+  let user: Wrapper<Vue>
+  let password: Wrapper<Vue>
+  let form: Wrapper<Vue>
 
-  function createConfig(overrides: StoreOptions<unknown>): Wrapper<SignIn> {
+  function createConfig(overrides: StoreOptions<unknown>): Wrapper<Vue> {
     const store = new Vuex.Store(overrides)
 
     const wrapper = shallowMount(SignIn, {
@@ -61,7 +61,7 @@ describe('SignIn.vue', () => {
         login: jest.fn().mockResolvedValue({})
       }
       , getters: {
-        idUser: (): string => '12345'
+        isAuthenticated: (): boolean  => true
       }
     }
 

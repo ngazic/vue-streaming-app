@@ -20,7 +20,8 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue'
+export default Vue.extend({
   computed: {
     auth(): void {
       return this.$store.getters.isAuthenticated;
@@ -31,7 +32,7 @@ export default {
       this.$store.dispatch("logout");
     }
   }
-};
+});
 </script>
 
 <style scoped>

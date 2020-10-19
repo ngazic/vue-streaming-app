@@ -10,14 +10,15 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import {
   mapGetters
 } from 'vuex'
-export default {
+export default Vue.extend({
   methods: {
     ...mapGetters(["getCurrentVideo"])
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

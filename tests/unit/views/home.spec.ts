@@ -5,9 +5,10 @@ import Modal from '@/components/UI/Modal.vue'
 import Home from '@/views/Home.vue'
 import { Video, allVideos } from '@/mocks/video-data'
 
+
 describe('Home.vue', () => {
-  let wrapper: Wrapper<Home>
-  let video: Wrapper<Home>
+  let wrapper: Wrapper<Vue>
+  let video: Wrapper<Vue>
   const initialVideo: Video = {
     id: -1,
     poster: '',
@@ -59,14 +60,16 @@ describe('Home.vue', () => {
 
   it('dispatch "payment" action with payed video', () => {
     expect(true).toBe(false)
-
+    
   });
 
   it('shows modal on video click', () => {
-
+    expect(true).toBe(false)
+    
   });
-
+  
   it('router called to watch payed video', () => {
+    expect(true).toBe(false)
 
   });
 
