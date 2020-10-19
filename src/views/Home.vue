@@ -24,7 +24,9 @@ import {
   Video,
   getVideos
 } from "../mocks/video-data";
-
+import {
+  mapActions
+} from 'vuex'
 const initialVideoList: Video[] = [];
 let initialVideo: Video;
 export default Vue.extend({
@@ -44,10 +46,12 @@ export default Vue.extend({
     };
   },
   methods: {
+    ...mapActions(['paymentAction']),
     payment(data: boolean): void {
       console.log(data);
       if (data) {
-        this.$store.dispatch("payment", this.currentVideo);
+        this.paymentVerified = true;
+        this.paymentAction(this.currentVideo)
         this.$store;
         this.$router.push("/watch");
       }

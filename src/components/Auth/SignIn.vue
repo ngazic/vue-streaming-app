@@ -18,7 +18,7 @@
 </div>
 </template>
 
-<script>
+<script lang="ts">
 import {
   mapActions
 } from "vuex";
@@ -32,9 +32,13 @@ export default {
   methods: {
     ...mapActions(["login"]),
     onSubmit() {
-      this.login(this.form)
-        .then(() => {
-          if (this.$store.getters.idUser.length !== '') {
+
+      this.login({
+          user: this.user,
+          password: this.password
+        })
+        .then((res: any) => {
+          if (this.$store.getters.isAuthenticated) {
             // eslint-disable-next-line no-console
             console.log("change route");
             this.$router.push("/");

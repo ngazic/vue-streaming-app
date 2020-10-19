@@ -3,8 +3,13 @@
   <div class="signup-form">
     <form @submit.prevent="onSubmit">
       <div class="input">
-        <label for="user">Mail</label>
-        <input type="email" id="user" v-model="user" />
+        <label for="email">Mail</label>
+        <input type="email" id="email" v-model="email" />
+      </div>
+
+      <div class="input">
+        <label for="user">Username</label>
+        <input type="text" id="user" v-model="user" />
       </div>
 
       <div class="input">
@@ -23,7 +28,7 @@
 </div>
 </template>
 
-<script>
+<script lang="ts">
 import {
   mapActions
 } from "vuex";
@@ -32,32 +37,38 @@ export default {
     return {
       user: "",
       password: "",
+      email: "",
       confirmPassword: ""
     };
   },
   methods: {
     ...mapActions(["signup"]),
-    onSubmit() {
+    onSubmit(): void {
       if (this.password.length < 6) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        //@ts-ignore
         this.$refs.passwrd.focus();
         alert("Enter 6 characters minimum!!!");
         return;
       }
-      if (this.$refs["confirm-password"].value !== this.password) {
+      if (this.confirmPassword !== this.password) {
         alert("Please confirm correct password!!!");
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        //@ts-ignore
         this.$refs["confirm-password"].focus();
         return;
       }
       // alert(JSON.stringify(this.data));
-      this.error = false;
 
       this.signup({
           user: this.user,
-          password: this.password
+          password: this.password,
+          email: this.email
         })
-        .then(res => {
-          this.success = res;
+        .then((res) => {
           this.$router.push("/");
+          console.log('SIGNUP')
+          console.log(res)
         })
         .catch(err => (alert(err)));
     }

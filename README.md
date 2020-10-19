@@ -1,5 +1,12 @@
 # vue-streaming-app
 
+## Description
+
+For auth use U: test / P: test ( dummy account because https://spect8-streams-backend.dev.vaudience.net/api/auth/signup has errors)
+
+### TODOS 
+implement test for components, router and store. 
+
 ## Project setup
 ```
 npm install
@@ -36,3 +43,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+

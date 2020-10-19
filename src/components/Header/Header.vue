@@ -19,10 +19,10 @@
 </header>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   computed: {
-    auth() {
+    auth(): void {
       return this.$store.getters.isAuthenticated;
     }
   },

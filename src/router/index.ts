@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
+import VueRouter, { NavigationGuardNext, Route, RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import store from '../store'
 import SignIn from '@/components/Auth/SignIn.vue'
@@ -9,11 +9,11 @@ import Video from '@/components/UI/Video.vue'
 Vue.use(VueRouter)
 
 
-function authentification(to, from, next): void {
+function authentification(_to: Route, _from: Route, _next: NavigationGuardNext<Vue>): void {
   if (store.getters.isAuthenticated) {
-    next()
+    _next()
   } else {
-    next('/signin')
+    _next('/signin')
   }
 }
 

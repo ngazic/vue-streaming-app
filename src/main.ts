@@ -8,7 +8,7 @@ import axios from 'axios'
 Vue.config.productionTip = false
 
 //Adding base url for axios auth calls
-axios.defaults.baseURL = "https://identitytoolkit.googleapis.com/v1";
+axios.defaults.baseURL = "https://spect8-streams-backend.dev.vaudience.net/api/auth/";
 
 new Vue({
   router,
