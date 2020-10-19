@@ -1,6 +1,6 @@
 # vue-streaming-app
 ## Live version
-[Hosted on Netlify](https://app.netlify.com/sites/mthit-monster-slayer/settings/deploys)
+[Hosted on Netlify](https://app.netlify.com/sites/vue-streaming-app/overview)
 ## Description
 
 For auth use U: test / P: test ( dummy account because https://spect8-streams-backend.dev.vaudience.net/api/auth/signup has errors).
