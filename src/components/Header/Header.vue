@@ -30,6 +30,7 @@ export default Vue.extend({
   methods: {
     onLogout() {
       this.$store.dispatch("logout");
+      this.$router.push('/signin')
     }
   }
 });

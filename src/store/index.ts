@@ -41,6 +41,9 @@ export default new Vuex.Store({
     },
     auth(store, userId: string): void {
       store.idToken = userId;
+    },
+    logoutMutation(store) {
+      store.idToken = ''
     }
   },
   actions: {
@@ -66,6 +69,9 @@ export default new Vuex.Store({
         loginId: user.user
       }) as Promise< void>
     },
+    logout(context): void {
+      context.commit('logoutMutation')
+    }
   },
   modules: {
   }
