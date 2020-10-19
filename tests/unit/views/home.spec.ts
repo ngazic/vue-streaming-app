@@ -17,7 +17,7 @@ describe('Home.vue', () => {
   }
   const localVue = createLocalVue()
   const actions = {
-    paymentAction: () => jest.fn()
+    paymentAction: jest.fn()
   }
   localVue.use(VueRouter)
   localVue.use(Vuex)
@@ -49,11 +49,12 @@ describe('Home.vue', () => {
     await video.trigger('click')
     expect(wrapper.findComponent(Modal).exists()).toBe(true)
   });
-  it('should redirect to clicked video if payment is confirmed', () => {
-  // console.log(wrapper.vm.payment)
-  wrapper.setData({paymentVerified: true});
-  console.log(wrapper.vm.$children)
-    expect(jest.spyOn(actions,'paymentAction')).toHaveBeenCalledWith({})
+  it('should redirect to clicked video if payment is confirmed', async () => {
+    // })
+    await video.trigger('click')
+    wrapper.setData({ paymentVerified: true });
+    wrapper.find('modal-stub').vm.$emit('handlePayment', true)
+    expect(actions.paymentAction).toHaveBeenCalled()
   });
 
   it('dispatch "payment" action with payed video', () => {
