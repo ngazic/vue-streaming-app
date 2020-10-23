@@ -3,18 +3,14 @@
 [Hosted on Netlify](https://vue-streaming-app.netlify.app/)
 ## Description
 
-For auth use U: test / P: test ( dummy account because https://spect8-streams-backend.dev.vaudience.net/api/auth/signup has errors).
+Simple TDD Vue JS Type Script app. App is used for demo purposes for implementation of Type Script in Vue JS apps with Jest unit tests. It uses Firebase Authentification with custom made auto login/logoff features and protected Home route.
 
-### Improvements
+REST API failsafe: (U: test / P: test)
 
-Add secure Auth token for each REST call, i.e. for fetching videos
 
 ### TODOS 
 1. implement test for components, router and store. 
-2. implement other Auth (e.i. firebase)
-3. add auto log off after 1h
-4. consider implement auth via auth package
-5. fetch videos via REST, replace mock data
+2. fetch videos via REST, replace mock data
 
 
 

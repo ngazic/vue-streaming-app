@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 import {
   mapActions
 } from "vuex";
@@ -33,11 +33,14 @@ export default Vue.extend({
   methods: {
     ...mapActions(["login"]),
     onSubmit() {
-
-      const data: {user: string; password: string} = {user: this.user, password:this.password}
-      this.login(
-      data
-      )
+      const data: {
+        email: string;
+        password: string;
+      } = {
+        email: this.user,
+        password: this.password
+      };
+      this.login(data)
         .then(() => {
           if (this.$store.getters.isAuthenticated) {
             // eslint-disable-next-line no-console

@@ -11,6 +11,11 @@ export default {
   name: "app",
   components: {
     "app-header": Header
+  },
+  created() {
+    if (this.$store.dispatch('autoLogin')) {
+      this.$router.push('/')
+    }
   }
 };
 </script>

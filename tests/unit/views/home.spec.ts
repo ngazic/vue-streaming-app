@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import Modal from '@/components/UI/Modal.vue'
 import Home from '@/views/Home.vue'
-import { Video, allVideos } from '@/mocks/video-data'
+import { Video } from '@/mocks/video-data.types'
+import { allVideos } from '@/mocks/video-data'
 
 
 describe('Home.vue', () => {

@@ -45,7 +45,9 @@ export const routes: Array<RouteConfig> = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  // remove '#' from the url 
+  mode: "history"
 })
 
 export default router

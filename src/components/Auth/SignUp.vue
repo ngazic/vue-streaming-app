@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 import {
   mapActions
 } from "vuex";
@@ -66,12 +66,10 @@ export default Vue.extend({
           password: this.password,
           email: this.email
         })
-        .then((res) => {
+        .then(() => {
           this.$router.push("/");
-          console.log('SIGNUP')
-          console.log(res)
         })
-        .catch(err => (alert(err)));
+        .catch(err => alert(err));
     }
   }
 });

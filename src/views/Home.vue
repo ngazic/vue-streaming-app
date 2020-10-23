@@ -22,6 +22,8 @@ import Vue from "vue";
 import Modal from "@/components/UI/Modal.vue";
 import {
   Video,
+} from "../mocks/video-data.types";
+import {
   getVideos
 } from "../mocks/video-data";
 import {
