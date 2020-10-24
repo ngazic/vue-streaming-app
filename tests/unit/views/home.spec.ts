@@ -58,20 +58,13 @@ describe('Home.vue', () => {
     wrapper.find('modal-stub').vm.$emit('handlePayment', true)
     expect(actions.paymentAction).toHaveBeenCalled()
   });
-
-  it('dispatch "payment" action with payed video', () => {
-    expect(true).toBe(false)
-    
-  });
-
-  it('shows modal on video click', () => {
-    expect(true).toBe(false)
-    
-  });
   
-  it('router called to watch payed video', () => {
-    expect(true).toBe(false)
-
+  it('router called to watch payed video', async () => {
+    await video.trigger('click')
+    const spy = jest.spyOn(wrapper.vm.$router,'push')
+    wrapper.setData({ paymentVerified: true });
+    wrapper.find('modal-stub').vm.$emit('handlePayment', true)
+    expect(spy).toBeCalledWith('/watch')
   });
 
 })
