@@ -9,7 +9,7 @@
       </button>
     </div>
     <div class="modal-body">
-      This is demo payment option. Clicking "Understood" will simulate payment service, and you will proceed with watching desired video
+      This is demo payment option. Clicking "Understood" will simulate payment service, and you will proceed with watching the desired video
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="cancel">
