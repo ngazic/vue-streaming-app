@@ -1,7 +1,7 @@
 import {AppState } from './store.types'
 import { Video } from '@/mocks/video-data.types'
 
-const initialVideo: Video = {
+export const initialVideo: Video = {
   id: -1,
   poster: '',
   price: 0,

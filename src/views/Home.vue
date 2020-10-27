@@ -50,7 +50,7 @@ export default Vue.extend({
   methods: {
     ...mapActions(['paymentAction']),
     payment(data: boolean): void {
-      console.log(data);
+      // console.log(data);
       if (data) {
         this.paymentVerified = true;
         this.paymentAction(this.currentVideo)
@@ -62,7 +62,7 @@ export default Vue.extend({
     click(video: Video): void {
       this.showModal = true;
       this.currentVideo = video;
-      console.log(video);
+      // console.log(video);
     }
   }
 });

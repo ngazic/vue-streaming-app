@@ -9,7 +9,7 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 localVue.use(VueRouter)
 const router = new VueRouter()
-jest.spyOn(window, 'alert').mockImplementation(() => { console.log('mocked alert') });
+jest.spyOn(window, 'alert').mockImplementation(() => { return });
 
 describe('SignUp.vue', () => {
   interface SignUpData {

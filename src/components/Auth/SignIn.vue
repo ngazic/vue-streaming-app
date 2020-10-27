@@ -44,7 +44,7 @@ export default Vue.extend({
         .then(() => {
           if (this.$store.getters.isAuthenticated) {
             // eslint-disable-next-line no-console
-            console.log("change route");
+            // console.log("change route");
             this.$router.push("/");
           }
         })
